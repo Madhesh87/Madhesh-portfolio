@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhesh M | Full Stack Internship Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define the technical/sharp color theme */
+        :root {
+            --color-primary: #00CED1; /* Dark Cyan/Turquoise */
+            --color-secondary: #00FFFF; /* Aqua/Cyan */
+            --color-dark: #0A0A0A;
+            --color-card: #151515;
+            --color-text: #F0F0F0;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-dark);
+            color: var(--color-text);
+            scroll-behavior: smooth;
+        }
+
+        /* Animated background for the hero section */
+        #hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0.1;
+            z-index: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at center, rgba(0, 206, 209, 0.1) 0%, transparent 70%);
+        }
+
+        .skill-icon {
+            color: var(--color-primary);
+        }
+
+        .section-title {
+            color: var(--color-secondary);
+            text-shadow: 0 0 5px rgba(0, 206, 209, 0.5);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-dark);
+            box-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .card-effect {
+            background-color: var(--color-card);
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+
+        .card-effect:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 206, 209, 0.15);
+        }
+
+        /* Profile image styling - Circular and framed */
+        .profile-img-container {
+            width: 250px;
+            height: 250px;
+            border: 3px solid var(--color-primary);
+            box-shadow: 0 0 20px rgba(0, 206, 209, 0.4);
+        }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+        
+        /* Custom LinkedIn button styling */
+        .btn-linkedin {
+            background-color: #0077B5; /* LinkedIn Blue */
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 119, 181, 0.5);
+            transition: all 0.3s;
+        }
+        .btn-linkedin:hover {
+            background-color: #0099e6;
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 119, 181, 0.8);
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-sm shadow-xl shadow-black/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#hero" class="text-2xl font-extrabold tracking-wider" style="color: var(--color-secondary);">MADHESH M</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-400 hover:text-white transition duration-200 hover:text-current font-medium">About</a>
+                    <a href="#education" class="text-gray-400 hover:text-white transition duration-200 hover:text-current font-medium">Education</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition duration-200 hover:text-current font-medium">Skills</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition duration-200 hover:text-current font-medium">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition duration-200 hover:text-current font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- 1. Hero Section -->
+        <section id="hero" class="relative py-24 md:py-32 min-h-[85vh] flex flex-col items-center justify-center text-center overflow-hidden">
+            <div id="hero-background"></div>
+            <div class="relative z-10">
+                <p class="text-lg sm:text-xl font-medium mb-3 tracking-widest uppercase text-gray-400">B.Tech. Student | AI & Data Science</p>
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight mb-4 leading-tight text-white max-w-6xl">
+                    Seeking a <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, var(--color-primary), var(--color-secondary));">Full Stack Developer</span> Internship
+                </h1>
+                <h2 class="text-xl sm:text-2xl font-light text-gray-400 mb-12 max-w-4xl mx-auto">
+                    Focused on building robust solutions using Python, SQL, HTML, CSS, and JavaScript.
+                </h2>
+                <a href="#projects" class="inline-block px-10 py-3 text-lg font-semibold rounded-full btn-primary">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="py-20 md:py-28 border-t border-gray-800">
+            <h2 class="text-4xl font-bold mb-16 text-center section-title">About Me</h2>
+            <div class="flex flex-col lg:flex-row items-center lg:space-x-12">
+                
+                <!-- Profile Image Card -->
+                <div class="relative w-48 h-48 mx-auto rounded-full border-4 border-cyan-400 shadow-lg overflow-hidden">
+  <img 
+    src="https://image2url.com/images/1762601784665-c099ff27-ba25-41cd-8a6d-5c2f2193bf95.jpg" 
+    alt="Madhesh M Professional Headshot" 
+    class="w-full h-full object-cover object-[35%_45%]" 
+    onerror="this.onerror=null; this.src='https://placehold.co/400x400/151515/00CED1?text=M+M+Profile';"
+  >
+  <div class="absolute inset-0 rounded-full ring-2 ring-cyan-400 blur-md opacity-70"></div>
+</div>
+
+                
+                <!-- Description -->
+                <div class="w-full lg:w-2/3 space-y-6 text-gray-300">
+                    <p class="text-xl font-semibold text-white tracking-wide">
+                        "Highly motivated B.Tech. student specializing in **Artificial Intelligence and Data Science**."
+                    </p>
+                    <p class="text-lg leading-relaxed border-l-4 border-l-cyan-600 pl-4">
+                        I combine a strong Analytical mindset from my AI/DS studies with foundational full-stack development skills. My experience covers developing responsive web interfaces (**HTML/CSS/JS**) and managing backend logic and data persistence using Python and SQL.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        I am eager to join a dynamic team as a Full Stack Developer intern to rapidly acquire expertise in modern frameworks and contribute immediately to the development of scalable, robust software solutions.
+                    </p>
+                    <div class="pt-4">
+                        <a href="#contact" class="text-lg text-cyan-400 hover:text-cyan-300 font-semibold transition duration-200 underline underline-offset-4">
+                            Let's discuss how I can add value to your team.
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Education & Certifications Section (The "Summit" Section) -->
+        <section id="education" class="py-20 md:py-28 border-t border-gray-800">
+            <h2 class="text-4xl font-bold mb-16 text-center section-title">Education & Professional Development</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- Education Card -->
+                <div class="card-effect p-8 rounded-xl shadow-lg border-l-4 border-cyan-600">
+                    <p class="text-sm font-light text-gray-400 mb-2">2023 - 2027 (Expected)</p>
+                    <h3 class="text-2xl font-bold text-white mb-2">Bachelor of Technology (B.Tech.)</h3>
+                    <p class="text-lg text-cyan-400 mb-4">RVS Technical Campus - Coimbatore, Tamil Nadu, India</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Specializing in **Artificial Intelligence and Data Science**, providing a strong foundation in complex logic, algorithms, and data structures critical for software development.
+                    </p>
+                </div>
+
+                <!-- Certifications Card -->
+                <div class="card-effect p-8 rounded-xl shadow-lg border-l-4 border-cyan-600">
+                    <p class="text-sm font-light text-gray-400 mb-2">MOOCs & Training</p>
+                    <h3 class="text-2xl font-bold text-white mb-2">Full-Stack & Data Skills</h3>
+                    <p class="text-lg text-cyan-400 mb-4">currenly MOOCs via nxtwave</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                        <li>**Full-stack Development:** Enhanced practical skills in modern web development techniques.</li>
+                        <li>**Power BI:** Developed proficiency in data visualization and reporting tools.</li>
+                        <li>**Core Competencies:** Proven ability in Effective Multitasking and Time management.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Skills Section -->
+        <section id="skills" class="py-20 md:py-28 border-t border-gray-800">
+            <h2 class="text-4xl font-bold mb-16 text-center section-title">My Toolkit</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Skill Group 1: Frontend -->
+                <div class="card-effect p-6 rounded-xl shadow-lg">
+                    <div class="text-3xl mb-3 skill-icon">🌐</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Front-End Development</h3>
+                    <p class="text-sm text-gray-400 mb-4">Crafting responsive and interactive user experiences.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">HTML5</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">CSS3</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">JavaScript</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">Responsive Design</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 2: Backend & Logic -->
+                <div class="card-effect p-6 rounded-xl shadow-lg">
+                    <div class="text-3xl mb-3 skill-icon">💻</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Back-End & Logic</h3>
+                    <p class="text-sm text-gray-400 mb-4">Core application logic and high-level scripting.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">Python (Scripting)</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">Data Structures</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">Algorithms</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 3: Databases & Data -->
+                <div class="card-effect p-6 rounded-xl shadow-lg">
+                    <div class="text-3xl mb-3 skill-icon">🗄️</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Data Management</h3>
+                    <p class="text-sm text-gray-400 mb-4">Handling data persistence and analytical querying.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">SQL</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">Database Querying</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">Data Analysis</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">Power BI</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 4: Tools & Version Control -->
+                <div class="card-effect p-6 rounded-xl shadow-lg">
+                    <div class="text-3xl mb-3 skill-icon">🛠️</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tools & Systems</h3>
+                    <p class="text-sm text-gray-400 mb-4">Essential environments and workflow management.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">Git/GitHub</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">Windows/Linux</span>
+                        <span class="text-sm px-3 py-1 rounded-full bg-cyan-900/50 text-cyan-300">VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Projects Section -->
+        <section id="projects" class="py-20 md:py-28 border-t border-gray-800">
+            <h2 class="text-4xl font-bold mb-16 text-center section-title">Academic Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Project Card 1: Simple Portfolio Website -->
+                <div class="card-effect rounded-xl shadow-2xl overflow-hidden">
+                    <img 
+                        src="https://placehold.co/600x300/151515/00CED1?text=Web+Interface" 
+                        alt="Simple Portfolio Website Image" 
+                        class="w-full h-40 object-cover border-b border-gray-700"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Simple Portfolio Website</h3>
+                        <p class="text-xs text-cyan-400 mb-4 font-mono">HTML, CSS, JavaScript</p>
+                        
+                        <ul class="list-disc list-inside text-sm text-gray-400 space-y-2 ml-2 mb-5">
+                            <li class="pl-1">Developed a responsive, cross-browser compatible interface using **HTML5 and CSS3**.</li>
+                            <li class="pl-1">Implemented fundamental **JavaScript** for client-side interactivity and smooth navigation.</li>
+                        </ul>
+
+                        <a href="#hero" class="text-cyan-500 hover:text-cyan-300 font-medium inline-flex items-center group text-sm transition duration-200">
+                            View Demo (Current Page)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Basic Inventory Management System -->
+                <div class="card-effect rounded-xl shadow-2xl overflow-hidden">
+                    <img 
+                        src="https://placehold.co/600x300/151515/00CED1?text=Data+Management+System" 
+                        alt="Basic Inventory Management System Image" 
+                        class="w-full h-40 object-cover border-b border-gray-700"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Inventory Management System</h3>
+                        <p class="text-xs text-cyan-400 mb-4 font-mono">Python, SQL</p>
+
+                        <ul class="list-disc list-inside text-sm text-gray-400 space-y-2 ml-2 mb-5">
+                            <li class="pl-1">Designed the backend logic in **Python** to handle business processes (CRUD operations).</li>
+                            <li class="pl-1">Utilized **SQL** for robust data storage and retrieval, ensuring data integrity.</li>
+                        </ul>
+
+                        <a href="#" target="_blank" class="text-cyan-500 hover:text-cyan-300 font-medium inline-flex items-center group text-sm transition duration-200">
+                            Source Code (Link Needed)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Data Visualization Dashboard -->
+                <div class="card-effect rounded-xl shadow-2xl overflow-hidden">
+                    <img 
+                        src="https://placehold.co/600x300/151515/00CED1?text=Power+BI+Dashboard" 
+                        alt="Data Visualization Dashboard Image" 
+                        class="w-full h-40 object-cover border-b border-gray-700"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Data Visualization Dashboard</h3>
+                        <p class="text-xs text-cyan-400 mb-4 font-mono">Power BI, Data Analysis</p>
+
+                        <ul class="list-disc list-inside text-sm text-gray-400 space-y-2 ml-2 mb-5">
+                            <li class="pl-1">Developed a dynamic dashboard in **Power BI** for complex dataset presentation.</li>
+                            <li class="pl-1">Executed efficient **data cleaning and transformation** to ensure accurate insights.</li>
+                        </ul>
+
+                        <a href="#" target="_blank" class="text-cyan-500 hover:text-cyan-300 font-medium inline-flex items-center group text-sm transition duration-200">
+                            View Dashboard (Link Needed)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contact Section -->
+        <section id="contact" class="py-20 md:py-28 mb-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold mb-16 text-center section-title">Let's Connect</h2>
+            <div class="max-w-xl mx-auto card-effect p-8 sm:p-10 rounded-xl shadow-2xl">
+                <p class="text-gray-400 text-center mb-8 text-lg">
+                    I'm actively seeking a Full Stack Developer internship and am available for immediate interviews. Connect with me on LinkedIn or send an email!
+                </p>
+                
+                <div class="space-y-4 text-center mb-10">
+                    <!-- Email -->
+                    <p class="text-white text-xl font-semibold">
+                        Email: 
+                        <a href="mailto:marimadhesh2006@gmail.com" class="text-cyan-400 hover:text-cyan-300 transition duration-200">marimadhesh2006@gmail.com</a>
+                    </p>
+                    <!-- Phone -->
+                    <p class="text-white text-xl font-semibold">
+                        Phone: 
+                        <a href="tel:+919043186220" class="text-cyan-400 hover:text-cyan-300 transition duration-200">+91 90431 86220</a>
+                    </p>
+                </div>
+
+                <!-- Primary CTA: LinkedIn Connect Button -->
+                <div class="text-center pt-4">
+                    <a href="https://linkedin.com/in/Madhesh87" target="_blank" class="inline-flex items-center justify-center px-8 py-3 text-lg font-bold rounded-lg btn-linkedin transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-3"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.532-4 0v5.604h-3v-11h3v1.765c1.395-2.618 7-2.77 7 2.476v6.759z"/></svg>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+                
+                <!-- Secondary Social Link -->
+                <div class="flex justify-center space-x-6 pt-8 text-3xl">
+                    <!-- GitHub (Placeholder - REMEMBER TO UPDATE THE 'href' below with your actual GitHub URL) -->
+                    <a href="https://github.com/YourGitHubUsername" target="_blank" aria-label="GitHub Profile" class="text-cyan-400 hover:text-white transition duration-200 transform hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.082-.743.085-.729.085-.729 1.2.084 1.839 1.237 1.839 1.237 1.07 1.838 2.809 1.305 3.491.998.108-.77.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.468-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23 2.385-.666 4.681-.666 7.065 0 2.293-1.552 3.301-1.23 3.301-1.23.653 1.653.242 2.873.118 3.176.77.84 1.236 1.911 1.236 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.204-6.085 8.204-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 border-t border-gray-800 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            &copy; <span id="current-year"></span> Madhesh M. All rights reserved. | Professional Portfolio
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
